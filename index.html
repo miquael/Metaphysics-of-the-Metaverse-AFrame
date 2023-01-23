@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Metaphysics of the Metaverse</title>
+        <meta name="description" content="by Michael Gaio">
+        
+        <!-- NOTES /////////////////////////////////////////////////////////////////
+            //
+            // - Metaphysics of the Metaverse 
+            // - 5 Pillars of the Metaverse
+            // - v.1
+            //
+            //////////////////////////////////////////////////////////////////////////// -->
+        
+        <!-- A-Frame -->
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <!-- A-Frame extras -->
+        <script src="https://rawgit.com/bryik/aframe-bmfont-text-component/master/dist/aframe-bmfont-text-component.min.js"></script>
+        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v2.6.1/dist/aframe-extras.min.js"></script>
+        <script src="https://rawgit.com/ngokevin/kframe/master/dist/kframe.min.js"></script>
+        <!-- Shaders -->
+        <script src="components/ground.js"></script>
+        <script src="shaders/skyGradient.js"></script>
+    </head>
+
+<body>
+
+    <!-- VR SCENE ////////////////////////////////////////////////////////////// -->
+    <a-scene>
+
+        <a-assets>
+            <!--<a-asset-item id="greek-pillar" src="models/pillar2/doric-pillar2.gltf"></a-asset-item> -->
+            <a-asset-item id="greek-pillar" src="models/Pillar-A1.glb"></a-asset-item>
+            <!-- Panel Textures -->
+            <img id="grid-blu" src="images/grid/grid-blue.png">
+            <a-asset-item id="cresent-moon" src="images/cresent-moon.png"></a-asset-item>
+        </a-assets>
+
+        <!-- ENVIRONMENT /////////////////////////////////////////////////////// -->
+        
+        <!-- Sky -->
+        <a-entity id="sky" geometry="primitive: sphere; radius: 100;"
+            material="shader: skyGradient; side: back; colorTop: #353449; colorBottom: #7EC0EE;"></a-entity>
+
+        <a-plane position="-36 20 78" height="11" width="11" opacity="0.33" src="#cresent-moon" look-at="[camera]" visible="true"></a-plane>
+
+        <!-- Grid - 275 x 275 -->
+        <a-grid static-body material="src: url(images/grid/grid-blue.png); repeat: 275 275" width="275" height="275"></a-grid>
+
+                <!-- Terrain (position 0 -1.8 0) -->
+        <a-entity ground position="0 -1.8 0" rotation="0 -20 0" visible="true"></a-entity>
+
+
+        <!-- SCENE /////////////////////////////////////////////////////// -->
+
+        <a-text value="Pillars of the Metaverse" position="0 5.25 -5" scale="1.75 1.75 1.75" align="center" color="#ffffff" neon></a-text>
+        
+        <a-entity position="-3 0 -5">
+            <a-entity gltf-model="#greek-pillar" scale="0.5 0.5 0.5"></a-entity>
+            <a-tetrahedron position="0 3.75 0" scale="0.5 0.5 0.5"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"></a-tetrahedron>
+            <a-text value="Social" position="0 4.5 0" align="center" color="#cc00ff" neon></a-text>
+        </a-entity>
+        
+        <a-entity position="-1.5 0 -5">
+            <a-entity gltf-model="#greek-pillar" scale="0.5 0.5 0.5"></a-entity>
+            <a-box position="0 3.75 0" scale="0.5 0.5 0.5"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"></a-box>
+            <a-text value="Economic" position="0 4.5 0" align="center" color="#cc00ff" neon></a-text>
+        </a-entity>
+        
+        <a-entity position="0 0 -5">
+            <a-entity gltf-model="#greek-pillar" scale="0.5 0.5 0.5"></a-entity>
+            <a-octahedron position="0 3.75 0" scale="0.5 0.5 0.5"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"></a-octahedron>
+            <a-text value="Immersive" position="0 4.5 0" align="center" color="#cc00ff" neon></a-text>
+        </a-entity>
+        
+        <a-entity position="1.5 0 -5">
+            <a-entity gltf-model="#greek-pillar" scale="0.5 0.5 0.5"></a-entity>
+            <a-dodecahedron position="0 3.75 0" scale="0.5 0.5 0.5"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"></a-dodecahedron>
+            <a-text value="Persistent" position="0 4.5 0" align="center" color="#cc00ff" neon></a-text>
+        </a-entity>
+        
+        <a-entity position="3 0 -5">
+            <a-entity gltf-model="#greek-pillar" scale="0.5 0.5 0.5"></a-entity>
+            <a-icosahedron position="0 3.75 0" scale="0.5 0.5 0.5"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"></a-icosahedron>
+            <a-text value="Extensible" position="0 4.5 0" align="center" color="#cc00ff" neon></a-text>
+        </a-entity>
+    
+
+        <!-- CAMERAS /////////////////////////////////////////////////////////// -->
+        <a-entity id="pov" position="0 0 0">
+            <a-camera></a-camera>
+        </a-entity>
+
+
+    </a-scene>
+</body>
+</html>

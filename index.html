@@ -6,9 +6,7 @@
         <meta charset="utf-8">
         <title>Metaphysics of the Metaverse - 5D Infographic WebVR Space</title>
         <meta name="description" content="Metaphysics of the Metaverse - WebVR space by Michael Gaio">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,maximum-scale=1">
+        
         
         <!-- NOTES /////////////////////////////////////////////////////////////////
             //
@@ -19,19 +17,13 @@
             //
             //////////////////////////////////////////////////////////////////////////// -->
         
-        <!-- A-Frame use: 1.0.4, move toward 1.4.1 -->
+        <!-- AFrame core code and extensions -->   
+        <!-- AFrame use: 1.3.0, move toward 1.4.1 -->
         <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-        <!-- A-Frame extras -->
-        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v2.6.1/dist/aframe-extras.min.js"></script>
+        <!--<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v2.6.1/dist/aframe-extras.min.js"></script>-->
         <!-- Environment Component -->
-        <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
-        <!-- Shaders 
-        <script src="components/ground.js"></script>
-        <script src="shaders/skyGradient.js"></script>-->
-
-        <!-- A-Frame Environment component -->
         <!-- See more environment options: https://github.com/feiss/aframe-environment-component#parameters -->
-        <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
 
     </head>
 
@@ -44,7 +36,7 @@
         gridColor: #3AD7FF;
         grid: 1x1;
         lighting: point;
-        lightPosition: 5 8 1;
+        lightPosition: 0 1 0;
         fog: 0.1;
         dressing: pyramids;
         dressingAmount: 12;
@@ -59,12 +51,19 @@
         groundYScale: 5;
         ">
 
+        <!-- ASSETS /////////////////////////////////////////////////////// -->
         <a-assets>
-            <!--<a-asset-item id="greek-pillar" src="models/pillar2/doric-pillar2.gltf"></a-asset-item> -->
-            <a-asset-item id="greek-pillar" src="models/Pillar-A1.glb"></a-asset-item>
+            
+            <!-- IMAGE ASSETS /////////////////// -->
             <!-- Panel Textures 
             <img id="grid-blu" src="images/grid/grid-blue.png">-->
             <a-asset-item id="cresent-moon" src="images/cresent-moon.png"></a-asset-item>
+
+            <!-- MODEL ASSETS /////////////////// -->
+            <a-asset-item id="greek-pillar" src="models/Pillar-A1.glb"></a-asset-item>
+            <!-- TEMPLATE ASSETS /////////////////// -->
+
+
         </a-assets>
 
         <!-- ENVIRONMENT /////////////////////////////////////////////////////// -->
@@ -120,6 +119,9 @@
                 animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"></a-icosahedron>
             <a-text value="Extensible" position="0 4.5 0" align="center" color="#3AD7FF" neon></a-text>
         </a-entity>
+
+
+        
     
 
         <!-- CAMERAS /////////////////////////////////////////////////////////// -->
